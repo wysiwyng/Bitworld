@@ -27,13 +27,13 @@ function Prop:Prop(propIndex)
     cellSizeX = 1/16
     cellSizeY = 1/2
 
-	bodyMesh:addVertex(scale,0, 0,(indexX * cellSizeX) + cellSizeX,indexY*cellSizeY)  
-	bodyMesh:addVertex(scale,sheight,0,(indexX * cellSizeX) + cellSizeX,(indexY * cellSizeY) + cellSizeY)
-	bodyMesh:addVertex(0, sheight,0,indexX*cellSizeX,(indexY * cellSizeY) + cellSizeY)
+	bodyMesh:addVertexWithUV(scale,0, 0,(indexX * cellSizeX) + cellSizeX,indexY*cellSizeY)  
+	bodyMesh:addVertexWithUV(scale,sheight,0,(indexX * cellSizeX) + cellSizeX,(indexY * cellSizeY) + cellSizeY)
+	bodyMesh:addVertexWithUV(0, sheight,0,indexX*cellSizeX,(indexY * cellSizeY) + cellSizeY)
  
-	bodyMesh:addVertex(0,0,0,(indexX * cellSizeX),(indexY * cellSizeY))       
-	bodyMesh:addVertex(0+scale,0,0,(indexX * cellSizeX)+cellSizeX,(indexY * cellSizeY))  
-	bodyMesh:addVertex(0,sheight,0,(indexX * cellSizeX),(indexY * cellSizeY)+cellSizeY)
+	bodyMesh:addVertexWithUV(0,0,0,(indexX * cellSizeX),(indexY * cellSizeY))       
+	bodyMesh:addVertexWithUV(0+scale,0,0,(indexX * cellSizeX)+cellSizeX,(indexY * cellSizeY))  
+	bodyMesh:addVertexWithUV(0,sheight,0,(indexX * cellSizeX),(indexY * cellSizeY)+cellSizeY)
   
 	bodyMesh:calculateNormals()
 	self.body = SceneMesh.SceneMeshFromMesh(bodyMesh)

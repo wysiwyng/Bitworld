@@ -33,13 +33,13 @@ function Level:createFloorTile(mesh,x,y,textureID)
 	local stepX = 0.0625
 	local offsetX = texID * stepX 
 
-	mesh:addVertex((x*self.levelScale),0,(y*self.levelScale)+self.levelScale,offsetX,0)
-	mesh:addVertex((x*self.levelScale)+self.levelScale,0,(y*self.levelScale)+self.levelScale,offsetX+stepX,0)
-	mesh:addVertex((x*self.levelScale)+self.levelScale,0,(y*self.levelScale),offsetX+stepX,1)
+	mesh:addVertexWithUV((x*self.levelScale),0,(y*self.levelScale)+self.levelScale,offsetX,0)
+	mesh:addVertexWithUV((x*self.levelScale)+self.levelScale,0,(y*self.levelScale)+self.levelScale,offsetX+stepX,0)
+	mesh:addVertexWithUV((x*self.levelScale)+self.levelScale,0,(y*self.levelScale),offsetX+stepX,1)
 
-	mesh:addVertex((x*self.levelScale),0,(y*self.levelScale)+self.levelScale,offsetX, 0)
-	mesh:addVertex((x*self.levelScale)+self.levelScale,0,(y*self.levelScale),offsetX+stepX, 1)
-	mesh:addVertex((x*self.levelScale),0,(y*self.levelScale),offsetX, 1)	
+	mesh:addVertexWithUV((x*self.levelScale),0,(y*self.levelScale)+self.levelScale,offsetX, 0)
+	mesh:addVertexWithUV((x*self.levelScale)+self.levelScale,0,(y*self.levelScale),offsetX+stepX, 1)
+	mesh:addVertexWithUV((x*self.levelScale),0,(y*self.levelScale),offsetX, 1)	
 end
 
 function Level:createHoleTile(mesh,x,y)
@@ -52,39 +52,39 @@ function Level:createHoleTile(mesh,x,y)
 	self.sheight = self.sheight * -0.5
 
 	if self.worldData[x][y-1] ~= 9 then
-		mesh:addVertex((x*self.levelScale),self.sheight,(y*self.levelScale),offsetX,0)
-		mesh:addVertex((x*self.levelScale)+self.levelScale,self.sheight,(y*self.levelScale),offsetX, 1)
-		mesh:addVertex((x*self.levelScale)+self.levelScale,0,(y*self.levelScale),offsetX+stepX, 0)
-		mesh:addVertex((x*self.levelScale),self.sheight,(y*self.levelScale),offsetX, 1)
-		mesh:addVertex((x*self.levelScale)+self.levelScale,0,(y*self.levelScale),offsetX+stepX,1)
-		mesh:addVertex((x*self.levelScale),0,(y*self.levelScale),offsetX+stepX,0)
+		mesh:addVertexWithUV((x*self.levelScale),self.sheight,(y*self.levelScale),offsetX,0)
+		mesh:addVertexWithUV((x*self.levelScale)+self.levelScale,self.sheight,(y*self.levelScale),offsetX, 1)
+		mesh:addVertexWithUV((x*self.levelScale)+self.levelScale,0,(y*self.levelScale),offsetX+stepX, 0)
+		mesh:addVertexWithUV((x*self.levelScale),self.sheight,(y*self.levelScale),offsetX, 1)
+		mesh:addVertexWithUV((x*self.levelScale)+self.levelScale,0,(y*self.levelScale),offsetX+stepX,1)
+		mesh:addVertexWithUV((x*self.levelScale),0,(y*self.levelScale),offsetX+stepX,0)
 	end
 
 	if self.worldData[x][y+1] ~= 9 then
-		mesh:addVertex((x*self.levelScale)+self.levelScale,0,(y*self.levelScale)+self.levelScale,offsetX, 1)	  
-		mesh:addVertex((x*self.levelScale)+self.levelScale,self.sheight,(y*self.levelScale)+self.levelScale,offsetX+stepX, 1)
-		mesh:addVertex((x*self.levelScale),self.sheight,(y*self.levelScale)+self.levelScale,offsetX+stepX, 0)
-		mesh:addVertex((x*self.levelScale),self.sheight,(y*self.levelScale)+self.levelScale,offsetX+stepX, 0)
-		mesh:addVertex((x*self.levelScale)+self.levelScale,0,(y*self.levelScale)+self.levelScale,offsetX,1)	  
-		mesh:addVertex((x*self.levelScale),0,(y*self.levelScale)+self.levelScale,offsetX, 0)
+		mesh:addVertexWithUV((x*self.levelScale)+self.levelScale,0,(y*self.levelScale)+self.levelScale,offsetX, 1)	  
+		mesh:addVertexWithUV((x*self.levelScale)+self.levelScale,self.sheight,(y*self.levelScale)+self.levelScale,offsetX+stepX, 1)
+		mesh:addVertexWithUV((x*self.levelScale),self.sheight,(y*self.levelScale)+self.levelScale,offsetX+stepX, 0)
+		mesh:addVertexWithUV((x*self.levelScale),self.sheight,(y*self.levelScale)+self.levelScale,offsetX+stepX, 0)
+		mesh:addVertexWithUV((x*self.levelScale)+self.levelScale,0,(y*self.levelScale)+self.levelScale,offsetX,1)	  
+		mesh:addVertexWithUV((x*self.levelScale),0,(y*self.levelScale)+self.levelScale,offsetX, 0)
 	end
 
 	if self.worldData[x-1][y] ~= 9 then
-		mesh:addVertex((x*self.levelScale),0,(y*self.levelScale)+self.levelScale,offsetX, 1)	  
-		mesh:addVertex((x*self.levelScale),self.sheight,(y*self.levelScale)+self.levelScale,offsetX+stepX, 1)
-		mesh:addVertex((x*self.levelScale),self.sheight,(y*self.levelScale),offsetX+stepX, 0)
-		mesh:addVertex((x*self.levelScale),0,(y*self.levelScale),offsetX, 0)		  
-		mesh:addVertex((x*self.levelScale),0,(y*self.levelScale)+self.levelScale,offsetX,1)	  
-		mesh:addVertex((x*self.levelScale),self.sheight,(y*self.levelScale),offsetX+stepX, 0)
+		mesh:addVertexWithUV((x*self.levelScale),0,(y*self.levelScale)+self.levelScale,offsetX, 1)	  
+		mesh:addVertexWithUV((x*self.levelScale),self.sheight,(y*self.levelScale)+self.levelScale,offsetX+stepX, 1)
+		mesh:addVertexWithUV((x*self.levelScale),self.sheight,(y*self.levelScale),offsetX+stepX, 0)
+		mesh:addVertexWithUV((x*self.levelScale),0,(y*self.levelScale),offsetX, 0)		  
+		mesh:addVertexWithUV((x*self.levelScale),0,(y*self.levelScale)+self.levelScale,offsetX,1)	  
+		mesh:addVertexWithUV((x*self.levelScale),self.sheight,(y*self.levelScale),offsetX+stepX, 0)
 	end
 	  
 	if self.worldData[x+1][y] ~= 9 then
-		mesh:addVertex((x*self.levelScale)+self.levelScale,self.sheight,(y*self.levelScale),offsetX+stepX,0)	  
-		mesh:addVertex((x*self.levelScale)+self.levelScale,self.sheight,(y*self.levelScale)+self.levelScale,offsetX+stepX,1)
-		mesh:addVertex((x*self.levelScale)+self.levelScale,0,(y*self.levelScale)+self.levelScale,offsetX,1)  
-		mesh:addVertex((x*self.levelScale)+self.levelScale,self.sheight,(y*self.levelScale),offsetX+stepX,0)	  
-		mesh:addVertex((x*self.levelScale)+self.levelScale,0,(y*self.levelScale)+self.levelScale,offsetX,1) 
-		mesh:addVertex((x*self.levelScale)+self.levelScale,0,(y*self.levelScale),offsetX,0)		  
+		mesh:addVertexWithUV((x*self.levelScale)+self.levelScale,self.sheight,(y*self.levelScale),offsetX+stepX,0)	  
+		mesh:addVertexWithUV((x*self.levelScale)+self.levelScale,self.sheight,(y*self.levelScale)+self.levelScale,offsetX+stepX,1)
+		mesh:addVertexWithUV((x*self.levelScale)+self.levelScale,0,(y*self.levelScale)+self.levelScale,offsetX,1)  
+		mesh:addVertexWithUV((x*self.levelScale)+self.levelScale,self.sheight,(y*self.levelScale),offsetX+stepX,0)	  
+		mesh:addVertexWithUV((x*self.levelScale)+self.levelScale,0,(y*self.levelScale)+self.levelScale,offsetX,1) 
+		mesh:addVertexWithUV((x*self.levelScale)+self.levelScale,0,(y*self.levelScale),offsetX,0)		  
 	end
 
 	self.sheight = oldheight 
@@ -95,43 +95,43 @@ function Level:createWallTile(mesh,x,y,textureID)
 	local stepX = 0.0625
 	local offsetX = 1 * stepX 
 
-	mesh:addVertex((x*self.levelScale),self.sheight,(y*self.levelScale)+self.levelScale,offsetX,0)   
-	mesh:addVertex((x*self.levelScale)+self.levelScale,self.sheight,(y*self.levelScale)+self.levelScale,offsetX+stepX,0)
-	mesh:addVertex((x*self.levelScale)+self.levelScale,self.sheight,(y*self.levelScale),offsetX+stepX,1)
+	mesh:addVertexWithUV((x*self.levelScale),self.sheight,(y*self.levelScale)+self.levelScale,offsetX,0)   
+	mesh:addVertexWithUV((x*self.levelScale)+self.levelScale,self.sheight,(y*self.levelScale)+self.levelScale,offsetX+stepX,0)
+	mesh:addVertexWithUV((x*self.levelScale)+self.levelScale,self.sheight,(y*self.levelScale),offsetX+stepX,1)
 
-	mesh:addVertex((x*self.levelScale),self.sheight,(y*self.levelScale)+self.levelScale, offsetX, 0)
-	mesh:addVertex((x*self.levelScale)+self.levelScale,self.sheight,(y*self.levelScale),offsetX+stepX, 1)
-	mesh:addVertex((x*self.levelScale),self.sheight,(y*self.levelScale),offsetX, 1)
+	mesh:addVertexWithUV((x*self.levelScale),self.sheight,(y*self.levelScale)+self.levelScale, offsetX, 0)
+	mesh:addVertexWithUV((x*self.levelScale)+self.levelScale,self.sheight,(y*self.levelScale),offsetX+stepX, 1)
+	mesh:addVertexWithUV((x*self.levelScale),self.sheight,(y*self.levelScale),offsetX, 1)
 	  
 	local offsetX = 2 * stepX 
 
-	mesh:addVertex((x*self.levelScale),self.sheight,(y*self.levelScale),offsetX,0)
-	mesh:addVertex((x*self.levelScale)+self.levelScale,self.sheight,(y*self.levelScale),offsetX+stepX,0)
-	mesh:addVertex((x*self.levelScale)+self.levelScale,0,(y*self.levelScale),offsetX+stepX,0.5)
-	mesh:addVertex((x*self.levelScale),self.sheight,(y*self.levelScale),offsetX, 0)
-	mesh:addVertex((x*self.levelScale)+self.levelScale,0,(y*self.levelScale),offsetX+stepX, 0.5)
-	mesh:addVertex((x*self.levelScale),0,(y*self.levelScale),offsetX, 0.5)
+	mesh:addVertexWithUV((x*self.levelScale),self.sheight,(y*self.levelScale),offsetX,0)
+	mesh:addVertexWithUV((x*self.levelScale)+self.levelScale,self.sheight,(y*self.levelScale),offsetX+stepX,0)
+	mesh:addVertexWithUV((x*self.levelScale)+self.levelScale,0,(y*self.levelScale),offsetX+stepX,0.5)
+	mesh:addVertexWithUV((x*self.levelScale),self.sheight,(y*self.levelScale),offsetX, 0)
+	mesh:addVertexWithUV((x*self.levelScale)+self.levelScale,0,(y*self.levelScale),offsetX+stepX, 0.5)
+	mesh:addVertexWithUV((x*self.levelScale),0,(y*self.levelScale),offsetX, 0.5)
 
-	mesh:addVertex((x*self.levelScale)+self.levelScale,0,(y*self.levelScale)+self.levelScale, offsetX+stepX,0.5)
-	mesh:addVertex((x*self.levelScale)+self.levelScale,self.sheight,(y*self.levelScale)+self.levelScale, offsetX+stepX,0)
-	mesh:addVertex((x*self.levelScale),self.sheight,(y*self.levelScale)+self.levelScale,offsetX,0)
-	mesh:addVertex((x*self.levelScale),0,(y*self.levelScale)+self.levelScale,offsetX, 0.5)
-	mesh:addVertex((x*self.levelScale)+self.levelScale,0,(y*self.levelScale)+self.levelScale,offsetX+stepX, 0.5)
-	mesh:addVertex((x*self.levelScale),self.sheight,(y*self.levelScale)+self.levelScale,offsetX, 0)
+	mesh:addVertexWithUV((x*self.levelScale)+self.levelScale,0,(y*self.levelScale)+self.levelScale, offsetX+stepX,0.5)
+	mesh:addVertexWithUV((x*self.levelScale)+self.levelScale,self.sheight,(y*self.levelScale)+self.levelScale, offsetX+stepX,0)
+	mesh:addVertexWithUV((x*self.levelScale),self.sheight,(y*self.levelScale)+self.levelScale,offsetX,0)
+	mesh:addVertexWithUV((x*self.levelScale),0,(y*self.levelScale)+self.levelScale,offsetX, 0.5)
+	mesh:addVertexWithUV((x*self.levelScale)+self.levelScale,0,(y*self.levelScale)+self.levelScale,offsetX+stepX, 0.5)
+	mesh:addVertexWithUV((x*self.levelScale),self.sheight,(y*self.levelScale)+self.levelScale,offsetX, 0)
 
-	mesh:addVertex((x*self.levelScale),0,(y*self.levelScale)+self.levelScale,offsetX+stepX,0.5)
-	mesh:addVertex((x*self.levelScale),self.sheight,(y*self.levelScale)+self.levelScale,offsetX+stepX,0)
-	mesh:addVertex((x*self.levelScale),self.sheight,(y*self.levelScale),offsetX,0)
-	mesh:addVertex((x*self.levelScale),0,(y*self.levelScale),offsetX, 0.5)
-	mesh:addVertex((x*self.levelScale),0,(y*self.levelScale)+self.levelScale,offsetX+stepX, 0.5)
-	mesh:addVertex((x*self.levelScale),self.sheight,(y*self.levelScale),offsetX, 0)
+	mesh:addVertexWithUV((x*self.levelScale),0,(y*self.levelScale)+self.levelScale,offsetX+stepX,0.5)
+	mesh:addVertexWithUV((x*self.levelScale),self.sheight,(y*self.levelScale)+self.levelScale,offsetX+stepX,0)
+	mesh:addVertexWithUV((x*self.levelScale),self.sheight,(y*self.levelScale),offsetX,0)
+	mesh:addVertexWithUV((x*self.levelScale),0,(y*self.levelScale),offsetX, 0.5)
+	mesh:addVertexWithUV((x*self.levelScale),0,(y*self.levelScale)+self.levelScale,offsetX+stepX, 0.5)
+	mesh:addVertexWithUV((x*self.levelScale),self.sheight,(y*self.levelScale),offsetX, 0)
 
-	mesh:addVertex((x*self.levelScale)+self.levelScale,self.sheight,(y*self.levelScale),offsetX,0)
-	mesh:addVertex((x*self.levelScale)+self.levelScale,self.sheight,(y*self.levelScale)+self.levelScale,offsetX+stepX,0)
-	mesh:addVertex((x*self.levelScale)+self.levelScale,0,(y*self.levelScale)+self.levelScale,offsetX+stepX, 0.5)
-	mesh:addVertex((x*self.levelScale)+self.levelScale,self.sheight,(y*self.levelScale),offsetX, 0)
-	mesh:addVertex((x*self.levelScale)+self.levelScale,0,(y*self.levelScale)+self.levelScale,offsetX+stepX, 0.5)
-	mesh:addVertex((x*self.levelScale)+self.levelScale,0,(y*self.levelScale),offsetX, 0.5)
+	mesh:addVertexWithUV((x*self.levelScale)+self.levelScale,self.sheight,(y*self.levelScale),offsetX,0)
+	mesh:addVertexWithUV((x*self.levelScale)+self.levelScale,self.sheight,(y*self.levelScale)+self.levelScale,offsetX+stepX,0)
+	mesh:addVertexWithUV((x*self.levelScale)+self.levelScale,0,(y*self.levelScale)+self.levelScale,offsetX+stepX, 0.5)
+	mesh:addVertexWithUV((x*self.levelScale)+self.levelScale,self.sheight,(y*self.levelScale),offsetX, 0)
+	mesh:addVertexWithUV((x*self.levelScale)+self.levelScale,0,(y*self.levelScale)+self.levelScale,offsetX+stepX, 0.5)
+	mesh:addVertexWithUV((x*self.levelScale)+self.levelScale,0,(y*self.levelScale),offsetX, 0.5)
 
 end
 

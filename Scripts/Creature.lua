@@ -130,13 +130,13 @@ function Creature:Creature(creatureIndex)
 		
 		self.baseXScale = 6
 
-		bodyMesh:addVertex((i*self.levelScale)+scale,0,(j*scale),1,0)  
-		bodyMesh:addVertex((i*scale)+scale,sheight,(j*scale),1,1)
-		bodyMesh:addVertex((i*scale),sheight,(j*scale),0,1)
+		bodyMesh:addVertexWithUV((i*self.levelScale)+scale,0,(j*scale),1,0)  
+		bodyMesh:addVertexWithUV((i*scale)+scale,sheight,(j*scale),1,1)
+		bodyMesh:addVertexWithUV((i*scale),sheight,(j*scale),0,1)
  
-		bodyMesh:addVertex((i*scale),0,(j*scale),0,0)	   
-		bodyMesh:addVertex((i*scale)+scale,0,(j*scale),1,0)  
-		bodyMesh:addVertex((i*scale),sheight,(j*scale),0,1)
+		bodyMesh:addVertexWithUV((i*scale),0,(j*scale),0,0)	   
+		bodyMesh:addVertexWithUV((i*scale)+scale,0,(j*scale),1,0)  
+		bodyMesh:addVertexWithUV((i*scale),sheight,(j*scale),0,1)
   
 		bodyMesh:calculateNormals()
 
@@ -146,13 +146,13 @@ function Creature:Creature(creatureIndex)
 		bodyMesh = Mesh(Mesh.TRI_MESH)
 		bodyMesh.indexedMesh = false
 
-		bodyMesh:addVertex((i*self.levelScale)+scale,0,(j*scale),0,0)  
-		bodyMesh:addVertex((i*scale)+scale,sheight,(j*scale),0,1)
-		bodyMesh:addVertex((i*scale),sheight,(j*scale),1,1)
+		bodyMesh:addVertexWithUV((i*self.levelScale)+scale,0,(j*scale),0,0)  
+		bodyMesh:addVertexWithUV((i*scale)+scale,sheight,(j*scale),0,1)
+		bodyMesh:addVertexWithUV((i*scale),sheight,(j*scale),1,1)
  
-		bodyMesh:addVertex((i*scale),0,(j*scale),1,0)	   
-		bodyMesh:addVertex((i*scale)+scale,0,(j*scale),0,0)  
-		bodyMesh:addVertex((i*scale),sheight,(j*scale),1,1)
+		bodyMesh:addVertexWithUV((i*scale),0,(j*scale),1,0)	   
+		bodyMesh:addVertexWithUV((i*scale)+scale,0,(j*scale),0,0)  
+		bodyMesh:addVertexWithUV((i*scale),sheight,(j*scale),1,1)
   
 		bodyMesh:calculateNormals()
 		self.lBody = SceneMesh.SceneMeshFromMesh(bodyMesh)
@@ -167,13 +167,13 @@ function Creature:Creature(creatureIndex)
 		--self.y = self.levelScale*4*0.5
 	else  
 
-		bodyMesh:addVertex((i*scale)+scale,0,(j*scale),(indexX * cellSizeX) + cellSizeX,indexY*cellSizeY)  
-		bodyMesh:addVertex((i*scale)+scale,sheight,(j*scale),(indexX * cellSizeX) + cellSizeX,(indexY * cellSizeY) + cellSizeY)
-		bodyMesh:addVertex((i*scale),sheight,(j*scale),indexX*cellSizeX,(indexY * cellSizeY) + cellSizeY)
+		bodyMesh:addVertexWithUV((i*scale)+scale,0,(j*scale),(indexX * cellSizeX) + cellSizeX,indexY*cellSizeY)  
+		bodyMesh:addVertexWithUV((i*scale)+scale,sheight,(j*scale),(indexX * cellSizeX) + cellSizeX,(indexY * cellSizeY) + cellSizeY)
+		bodyMesh:addVertexWithUV((i*scale),sheight,(j*scale),indexX*cellSizeX,(indexY * cellSizeY) + cellSizeY)
 
-		bodyMesh:addVertex((i*scale),0,(j*scale),(indexX * cellSizeX),(indexY * cellSizeY))	   
-		bodyMesh:addVertex((i*scale)+scale,0,(j*scale),(indexX * cellSizeX)+cellSizeX,(indexY * cellSizeY))  
-		bodyMesh:addVertex((i*scale),sheight,(j*scale),(indexX * cellSizeX),(indexY * cellSizeY)+cellSizeY)
+		bodyMesh:addVertexWithUV((i*scale),0,(j*scale),(indexX * cellSizeX),(indexY * cellSizeY))	   
+		bodyMesh:addVertexWithUV((i*scale)+scale,0,(j*scale),(indexX * cellSizeX)+cellSizeX,(indexY * cellSizeY))  
+		bodyMesh:addVertexWithUV((i*scale),sheight,(j*scale),(indexX * cellSizeX),(indexY * cellSizeY)+cellSizeY)
   
 		bodyMesh:calculateNormals()
 		self.rBody = SceneMesh.SceneMeshFromMesh(bodyMesh)
@@ -184,13 +184,13 @@ function Creature:Creature(creatureIndex)
 		bodyMesh = Mesh(Mesh.TRI_MESH)
 		bodyMesh.indexedMesh = false
 
-		bodyMesh:addVertex((i*scale)+scale,0,(j*scale),(indexX * cellSizeX) - cellSizeX,indexY*cellSizeY)  
-		bodyMesh:addVertex((i*scale)+scale,sheight,(j*scale),(indexX * cellSizeX) - cellSizeX,(indexY * cellSizeY) + cellSizeY)
-		bodyMesh:addVertex((i*scale),sheight,(j*scale),indexX*cellSizeX,(indexY * cellSizeY) + cellSizeY)
+		bodyMesh:addVertexWithUV((i*scale)+scale,0,(j*scale),(indexX * cellSizeX) - cellSizeX,indexY*cellSizeY)  
+		bodyMesh:addVertexWithUV((i*scale)+scale,sheight,(j*scale),(indexX * cellSizeX) - cellSizeX,(indexY * cellSizeY) + cellSizeY)
+		bodyMesh:addVertexWithUV((i*scale),sheight,(j*scale),indexX*cellSizeX,(indexY * cellSizeY) + cellSizeY)
 
-		bodyMesh:addVertex((i*scale),0,(j*scale),(indexX * cellSizeX),(indexY * cellSizeY))	   
-		bodyMesh:addVertex((i*scale)+scale,0,(j*scale),(indexX * cellSizeX)-cellSizeX,(indexY * cellSizeY))  
-		bodyMesh:addVertex((i*scale),sheight,(j*scale),(indexX * cellSizeX),(indexY * cellSizeY)+cellSizeY)
+		bodyMesh:addVertexWithUV((i*scale),0,(j*scale),(indexX * cellSizeX),(indexY * cellSizeY))	   
+		bodyMesh:addVertexWithUV((i*scale)+scale,0,(j*scale),(indexX * cellSizeX)-cellSizeX,(indexY * cellSizeY))  
+		bodyMesh:addVertexWithUV((i*scale),sheight,(j*scale),(indexX * cellSizeX),(indexY * cellSizeY)+cellSizeY)
   
 		bodyMesh:calculateNormals()
 		self.lBody = SceneMesh.SceneMeshFromMesh(bodyMesh)
@@ -218,13 +218,13 @@ function Creature:Creature(creatureIndex)
 	local shieldMesh = Mesh(Mesh.TRI_MESH)
 	shieldMesh.indexedMesh = false
 
-	shieldMesh:addVertex((i*self.levelScale)+scale,0,(j*scale),1,0)  
-	shieldMesh:addVertex((i*scale)+scale,sheight,(j*scale),1,1)
-	shieldMesh:addVertex((i*scale),sheight,(j*scale),0,1)
+	shieldMesh:addVertexWithUV((i*self.levelScale)+scale,0,(j*scale),1,0)  
+	shieldMesh:addVertexWithUV((i*scale)+scale,sheight,(j*scale),1,1)
+	shieldMesh:addVertexWithUV((i*scale),sheight,(j*scale),0,1)
 
-	shieldMesh:addVertex((i*scale),0,(j*scale),0,0)	   
-	shieldMesh:addVertex((i*scale)+scale,0,(j*scale),1,0)
-	shieldMesh:addVertex((i*scale),sheight,(j*scale),0,1)
+	shieldMesh:addVertexWithUV((i*scale),0,(j*scale),0,0)	   
+	shieldMesh:addVertexWithUV((i*scale)+scale,0,(j*scale),1,0)
+	shieldMesh:addVertexWithUV((i*scale),sheight,(j*scale),0,1)
 
 	shieldMesh:calculateNormals()
 
